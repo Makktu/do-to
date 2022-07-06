@@ -1,0 +1,55 @@
+body {
+    background-color: rgb(163, 190, 156);
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+#content {
+    height: 70vh;
+    width: 90vw;
+    border: yellow 5px solid;
+    padding: 20px;
+    display: flex;
+    align-items: stretch; /* Default */
+    justify-content: space-between;
+}
+#header {
+    height: 10vh;
+    width: 90vw;
+    border: rgb(75, 75, 56) 5px solid;
+    text-align: center;
+}
+#control {
+    height: 10vh;
+    width: 90vw;
+    border: white 5px solid;
+}
+
+button {
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: antiquewhite;
+    transition: 0.5s ease;
+}
+
+.doneBtn {
+    background-color: aquamarine;
+}
+
+.editBtn {
+    margin-right: 2px;
+    background-color: cadetblue;
+}
+
+.task-card {
+    border: 3px white solid;
+    width: 120px;
+    border-radius: 30px;
+    padding: 10px;
+    display: block;
+    flex: 0 1 auto; /* Default */
+}
