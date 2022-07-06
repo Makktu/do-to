@@ -5,15 +5,19 @@ export default function createNewToDo() {
     console.log(toDoList);
     let html = "";
     for (let g = 0; g < toDoList.length; g++) {
-        html += `<br><div class='task-card'><div id='task${g}'>💥 ${
-            toDoList[g].task
-        }</div><div>Due: ${toDoList[g].date}</div><div>Priority: ${
+        html += `<br><div class='task-card'><div>${
+            toDoList[g].group
+        }</div><div id='task${g}'>💥 ${toDoList[g].task}</div><div>Due: ${
+            toDoList[g].date
+        }</div><div>Priority: ${
             toDoList[g].priority == 1
                 ? "High"
                 : toDoList[g].priority < 4
                 ? "Medium"
                 : "Low"
-        }</div><button class='editBtn' id='btn${g}'>EDIT</button><button class='doneBtn' id='done${g}'>DONE!</button></div><br>`;
+        }<br></div><div>${toDoList[g].notes ? "Note: " : ""}${
+            toDoList[g].notes
+        }</div><br><button class='editBtn' id='btn${g}'>EDIT</button><button class='doneBtn' id='done${g}'>DONE!</button></div><br>`;
     }
     const element = document.createElement("div");
     element.innerHTML = html;
