@@ -5,7 +5,7 @@ export default function createNewToDo() {
     console.log(toDoList);
     let html = "";
     for (let g = 0; g < toDoList.length; g++) {
-        html += `<br><div class='task-card'><div>${
+        html += `<div class='task-card'><div>${
             toDoList[g].group
         }</div><div id='task${g}'>💥 ${toDoList[g].task}</div><div>Due: ${
             toDoList[g].date == "today" ? "‼️" : ""
@@ -17,9 +17,10 @@ export default function createNewToDo() {
                 : "Low"
         }<br></div><div>${toDoList[g].notes ? "Note: " : ""}${
             toDoList[g].notes
-        }</div><br><button class='editBtn' id='btn${g}'>EDIT</button><button class='doneBtn' id='done${g}'>DONE!</button></div><br>`;
+        }</div><br><button class='btns editBtn' id='btn${g}'>EDIT</button><button class='btns doneBtn' id='done${g}'>DONE!</button></div>`;
     }
     const element = document.createElement("div");
+    element.className = "display";
     element.innerHTML = html;
 
     return element;

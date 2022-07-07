@@ -1,5 +1,6 @@
 import "./style.scss";
 import createNewToDo from "./renderDisplay.js";
+import headContent from "./headSection.js";
 import { ClassBody } from "requirejs";
 
 console.log("✅ Running");
@@ -57,4 +58,5 @@ console.log(newTodo);
 
 toDoList.push(newTodo);
 
+headSection.appendChild(headContent());
 content.appendChild(createNewToDo());
