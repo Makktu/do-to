@@ -1,8 +1,7 @@
 import theList from "./newToDo.js";
 
-export default function createNewToDo() {
-    let toDoList = theList();
-    console.log(toDoList);
+export default function createNewToDo(toDoList) {
+    // let toDoList = theList();
     let html = "";
     for (let g = 0; g < toDoList.length; g++) {
         html += `<div class='task-card'><div><div class=${toDoList[g].group}>${
