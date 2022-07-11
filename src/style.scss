@@ -1,5 +1,6 @@
 $mainColor: rgba(66, 141, 217, 0.642);
 $secondaryColor: cyan;
+$group: yellow;
 
 body {
     background-color: $mainColor;
@@ -66,6 +67,13 @@ button:hover {
 .fa-gears {
     margin-right: 20px;
     font-size: 3rem;
+}
+
+.Routine,
+.Finances,
+.Personal {
+    color: $group;
+    font-size: 1.4rem;
 }
 
 // .btns {

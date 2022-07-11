@@ -1,13 +1,13 @@
-import theList from "./index.js";
+import theList from "./newToDo.js";
 
 export default function createNewToDo() {
     let toDoList = theList();
     console.log(toDoList);
     let html = "";
     for (let g = 0; g < toDoList.length; g++) {
-        html += `<div class='task-card'><div>${
+        html += `<div class='task-card'><div><div class=${toDoList[g].group}>${
             toDoList[g].group
-        }</div><div id='task${g}'>💥 ${toDoList[g].task}</div><div>Due: ${
+        }</div></div><div id='task${g}'>💥 ${toDoList[g].task}</div><div>Due: ${
             toDoList[g].date == "today" ? "‼️" : ""
         }${toDoList[g].date}</div><div>Priority: ${
             toDoList[g].priority == 1

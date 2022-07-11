@@ -1,9 +1,9 @@
 import "./style.scss";
 import createNewToDo from "./renderDisplay.js";
 import headContent from "./headSection.js";
-import { ClassBody } from "requirejs";
+// import { theList, ToDo } from "./newToDo";
 
-console.log("✅ Running");
+console.log("✅ Running", new Date().toString().slice(0, 25));
 
 const headSection = document.getElementById("header");
 const content = document.getElementById("content");
@@ -31,10 +31,6 @@ let toDoList = [
         notes: "check Amazon for next volume",
     },
 ];
-
-export default function theList() {
-    return toDoList;
-}
 
 class ToDo {
     constructor(task, date, priority, group, notes) {
