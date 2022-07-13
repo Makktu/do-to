@@ -76,4 +76,53 @@ button:hover {
 
 .fa-solid {
   cursor: pointer;
+}
+
+.modal {
+  max-width: 50ch;
+}
+.modal > * {
+  margin: 0 0 0.5rem 0;
+}
+
+.modal::-webkit-backdrop {
+  background: rgba(0, 0, 0, 0.428);
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.428);
+}
+
+/* extra styling */
+body {
+  min-height: 100vh;
+  margin: 2rem;
+  font-family: system-ui;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--gray-8);
+}
+
+h1 em {
+  color: var(--cyan-9);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.button {
+  border: 0;
+}
+
+.button:hover,
+.button:focus {
+  background: var(--cyan-9);
+}
+
+form {
+  display: grid;
+  gap: 1em;
+}
+
+.close-button {
+  font-size: 3rem;
 }/*# sourceMappingURL=style.css.map */

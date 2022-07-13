@@ -18,5 +18,23 @@
         <div id="control">
             <i class="fa-solid fa-plus"></i><i class="fa-solid fa-gears"></i>
         </div>
+
+        <button class="button open-button">open modal</button>
+
+        <dialog class="modal" id="modal">
+            <button class="button close-button">X</button>
+            <h4>Create New To-Do</h4>
+            <p>Enter the unironic deets, yo.</p>
+
+            <form class="form" method="dialog">
+                <label>Group</label>
+                <label>TASK: <input type="text" /></label>
+                <label>Due By? <input type="text" /></label>
+                <label>Priority <input type="text" /></label>
+                <label>Notes: <input type="textarea" /></label>
+
+                <button class="button" type="submit">SAVE</button>
+            </form>
+        </dialog>
     </body>
 </html>
