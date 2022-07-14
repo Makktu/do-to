@@ -33,11 +33,40 @@ function addControlButtons() {
         modal.showModal();
     });
 
-    // addNewEntry.addEventListener("click", () => {
-    //     console.log("Add New Clicked");
-    //     // makeNewEntry(toDoList);
-    //     // newToDo(toDoList);
-    // });
+    // ****************************
+    // *** NEW TASK SAVE BUTTON ***
+    // ****************************
+
+    const newTaskSaveBtn = document.querySelector(".submitBtn");
+
+    newTaskSaveBtn.addEventListener("click", (e) => {
+        // stop form closing until minimum 1 field entered
+        e.preventDefault();
+
+        let newGroup = document.getElementById("group").value;
+        let newTask = document.getElementById("new-task").value;
+        let newDue = document.getElementById("due-by").value;
+        let newPriority = document.getElementById("priority").value;
+        let newNotes = document.getElementById("notes").value;
+
+        if (!newTask) {
+            alert("There must be an entry in the TASK section!");
+            return;
+        }
+
+        modal.close();
+
+        makeNewEntry(
+            toDoList,
+            newTask,
+            newDue,
+            newPriority,
+            newGroup,
+            newNotes
+        );
+    });
+
+    // *****************************
 
     const settingsBtn = document.querySelector(".fa-gears");
 
@@ -46,9 +75,7 @@ function addControlButtons() {
     });
 
     const modal = document.querySelector("#modal");
-    // const openModal = document.querySelector(".open-button");
     const closeModal = document.querySelector(".close-button");
-
     closeModal.addEventListener("click", () => {
         modal.close();
     });

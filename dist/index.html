@@ -27,13 +27,45 @@
             <p>Enter the unironic deets, yo.</p>
 
             <form class="form" method="dialog">
-                <label>Group</label>
-                <label>TASK: <input type="text" /></label>
-                <label>Due By? <input type="text" /></label>
-                <label>Priority <input type="text" /></label>
-                <label>Notes: <input type="textarea" /></label>
+                <div>
+                    <label>Group</label>
+                    <select name="group" id="group">
+                        <option selected="selected" value="Personal">
+                            Personal
+                        </option>
+                        <option value="Finances">Finances</option>
+                        <option value="Routine">Routine</option>
+                    </select>
+                </div>
+                <label>TASK: <input id="new-task" type="text" /></label>
+                <div>
+                    <label>Due By </label>
+                    <select name="due-by" id="due-by">
+                        <option selected="selected" value="today">Today</option>
+                        <option value="tomorrow">Tomorrow</option>
+                        <option value="choose-date">Choose Date</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Priority </label>
+                    <select name="priority" id="priority">
+                        <option value="critical">Critical</option>
+                        <option selected="selected" value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                </div>
+                <label
+                    >Notes:
+                    <textarea
+                        id="notes"
+                        name="notes"
+                        rows="4"
+                        cols="30"
+                    ></textarea>
+                </label>
 
-                <button class="button" type="submit">SAVE</button>
+                <button class="submitBtn" type="submit">SAVE</button>
             </form>
         </dialog>
     </body>
