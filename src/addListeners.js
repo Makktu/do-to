@@ -5,12 +5,32 @@ import createNewToDo from "./renderDisplay.js";
 
 export { addControlButtons, addListeners };
 
+export { entryId };
+
+let editFlag = false;
+
+let entryId;
+
+function editEntry(entryId) {
+    console.log(entryId);
+
+    modal.showModal();
+    document.getElementById("entry-mode").innerText = "EDIT TO-DO";
+    document.getElementById("new-task").value = toDoList[entryId].task;
+    document.getElementById("group").value = toDoList[entryId].group;
+    document.getElementById("due-by").value = toDoList[entryId].newDue;
+    document.getElementById("priority").value = toDoList[entryId].priority;
+    document.getElementById("notes").value = toDoList[entryId].notes;
+    editFlag = true;
+}
+
 function addListeners() {
     const allEditBtns = document.querySelectorAll(".editBtn");
 
     allEditBtns.forEach((btn) => {
         btn.addEventListener("click", (e) => {
-            console.log(e.target.id);
+            entryId = e.target.id.slice(3);
+            editEntry(entryId);
         });
     });
 
@@ -31,6 +51,9 @@ function addControlButtons() {
 
     addNewEntry.addEventListener("click", () => {
         modal.showModal();
+        if (document.getElementById("entry-mode").innerText == "EDIT TO-DO")
+            document.getElementById("entry-mode").innerText =
+                "Create New To-Do";
     });
 
     // ****************************
@@ -54,6 +77,9 @@ function addControlButtons() {
             return;
         }
 
+        document.getElementById("new-task").value = "";
+        document.getElementById("notes").value = "";
+
         modal.close();
 
         makeNewEntry(
@@ -62,8 +88,12 @@ function addControlButtons() {
             newDue,
             newPriority,
             newGroup,
-            newNotes
+            newNotes,
+            editFlag ? editFlag : null,
+            editFlag ? entryId : null
         );
+
+        if (editFlag) editFlag = false;
     });
 
     // *****************************

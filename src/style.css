@@ -125,4 +125,13 @@ form {
 
 .close-button {
   font-size: 3rem;
+}
+
+#group {
+  font-size: 1.25rem;
+}
+
+input,
+select {
+  font-size: 1.25rem;
 }/*# sourceMappingURL=style.css.map */
