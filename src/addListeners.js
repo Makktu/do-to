@@ -1,4 +1,4 @@
-import { toDoList, content } from "./index.js";
+import { toDoList, content, currentCategory } from "./index.js";
 import { makeNewEntry } from "./newToDo.js";
 
 import createNewToDo from "./renderDisplay.js";
@@ -108,5 +108,16 @@ function addControlButtons() {
     const closeModal = document.querySelector(".close-button");
     closeModal.addEventListener("click", () => {
         modal.close();
+    });
+
+    const categoriesList = document.getElementById("categories");
+
+    console.log(categoriesList.value);
+
+    categoriesList.addEventListener("change", () => {
+        // currentCategory = categoriesList.value;
+        console.log(categoriesList.value);
+        content.innerHTML = "";
+        content.appendChild(createNewToDo(toDoList, categoriesList.value));
     });
 }

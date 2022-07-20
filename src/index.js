@@ -3,6 +3,7 @@ import createNewToDo from "./renderDisplay.js";
 import headContent from "./headSection.js";
 import { addListeners, addControlButtons } from "./addListeners.js";
 
+export let currentCategory = "ALL";
 export let toDoList = [
     {
         task: "Get bread",
@@ -33,7 +34,6 @@ const headSection = document.getElementById("header");
 export const content = document.getElementById("content");
 
 headSection.appendChild(headContent());
-content.appendChild(createNewToDo(toDoList));
-
+content.appendChild(createNewToDo(toDoList, currentCategory));
 addListeners();
 addControlButtons();

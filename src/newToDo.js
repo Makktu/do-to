@@ -1,6 +1,7 @@
 import { addListeners } from "./addListeners.js";
 import createNewToDo from "./renderDisplay.js";
 import { entryId } from "./addListeners.js";
+import { currentCategory } from "./index.js";
 export { ToDo, makeNewEntry };
 
 class ToDo {
@@ -23,12 +24,7 @@ function makeNewEntry(
     editFlag,
     entryId
 ) {
-    // *****************************************************
-    // **** NEED MODAL LOGIC FOR NEW ENTRY FORM IN HERE ****
-    // *****************************************************
-
     const newEntry = new ToDo(task, due, priority, category, notes);
-
     console.log(newEntry);
 
     if (entryId) {
@@ -42,6 +38,8 @@ function makeNewEntry(
         toDoList.push(newEntry);
     }
     content.innerHTML = "";
-    content.appendChild(createNewToDo(toDoList));
+    content.appendChild(
+        createNewToDo(toDoList, document.getElementById("categories").value)
+    );
     addListeners();
 }

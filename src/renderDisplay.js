@@ -1,6 +1,11 @@
-export default function createNewToDo(toDoList) {
+export default function createNewToDo(toDoList, currentCategory) {
     let html = "";
     for (let g = 0; g < toDoList.length; g++) {
+        if (currentCategory !== "ALL") {
+            if (toDoList[g].group !== currentCategory) {
+                continue;
+            }
+        }
         html += `<div class='task-card'><div><div class=${toDoList[g].group}>${
             toDoList[g].group
         }</div></div><div id='task${g}'>💥 ${toDoList[g].task}</div><div>Due: ${
@@ -17,6 +22,7 @@ export default function createNewToDo(toDoList) {
     }
     const element = document.createElement("div");
     element.className = "display";
+
     element.innerHTML = html;
 
     return element;
