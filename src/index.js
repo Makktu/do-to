@@ -28,6 +28,12 @@ export let toDoList = [
     },
 ];
 
+if (!window.localStorage.getItem("user")) {
+    window.localStorage.setItem("user", JSON.stringify(toDoList));
+} else {
+    toDoList = JSON.parse(window.localStorage.getItem("user"));
+}
+
 console.log("✅ Running", new Date().toString().slice(0, 25));
 
 const headSection = document.getElementById("header");

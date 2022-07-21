@@ -1,16 +1,17 @@
-$mainColor: rgba(66, 141, 217, 0.642);
-$secondaryColor: cyan;
+$mainColor: rgba(24, 25, 26, 0.642);
+$secondaryColor: rgb(70, 85, 85);
 $group: yellow;
 
 body {
     background-color: $mainColor;
+    color: whitesmoke;
     h1 {
         font-size: 3rem;
     }
 }
 
 #content {
-    background-color: rgb(161, 161, 111);
+    background-color: $secondaryColor;
     height: 70vh;
     width: 90vw;
     padding: 20px;
@@ -103,7 +104,7 @@ body {
     font-family: system-ui;
     font-size: 1.25rem;
     line-height: 1.5;
-    color: var(--gray-8);
+    // color: var(--gray-8);
     // background-image: url('https://images.unsplash.com/photo-1644242629712-943ae5c8c4f3?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0Njc1MjQxNA&ixlib=rb-1.2.1&q=85');
     // background-size: cover;
 }

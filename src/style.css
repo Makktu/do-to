@@ -1,12 +1,13 @@
 body {
-  background-color: rgba(66, 141, 217, 0.642);
+  background-color: rgba(24, 25, 26, 0.642);
+  color: whitesmoke;
 }
 body h1 {
   font-size: 3rem;
 }
 
 #content {
-  background-color: rgb(161, 161, 111);
+  background-color: rgb(70, 85, 85);
   height: 70vh;
   width: 90vw;
   padding: 20px;
@@ -23,14 +24,14 @@ body h1 {
   width: 90vw;
   border: rgb(75, 75, 56) 5px solid;
   text-align: center;
-  background-color: cyan;
+  background-color: rgb(70, 85, 85);
 }
 
 #control {
   height: 10vh;
   width: 90vw;
   border: white 5px solid;
-  background-color: cyan;
+  background-color: rgb(70, 85, 85);
 }
 
 button {
@@ -100,7 +101,6 @@ body {
   font-family: system-ui;
   font-size: 1.25rem;
   line-height: 1.5;
-  color: var(--gray-8);
 }
 
 h1 em {

@@ -42,4 +42,5 @@ function makeNewEntry(
         createNewToDo(toDoList, document.getElementById("categories").value)
     );
     addListeners();
+    window.localStorage.setItem("user", JSON.stringify(toDoList));
 }
